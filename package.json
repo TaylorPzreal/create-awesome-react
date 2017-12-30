@@ -1,0 +1,40 @@
+{
+  "name": "create-awesome-react",
+  "description": "CLI tool for [awesome-react](https://github.com/TaylorPzreal/awesome-react)",
+  "version": "0.1.0",
+  "bin": {
+    "create-awesome-react": "create-awesome-react.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaylorPzreal/create-awesome-react.git"
+  },
+  "keywords": [
+    "create-awesome-react",
+    "react",
+    "cli",
+    "create-react-app"
+  ],
+  "author": "TaylorPzreal <taylorpzreal@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TaylorPzreal/create-awesome-react/issues"
+  },
+  "homepage": "https://github.com/TaylorPzreal/create-awesome-react#readme",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "commander": "^2.12.2",
+    "fs-extra": "^5.0.0",
+    "hyperquest": "^2.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-plugin-node": "^5.2.1"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}
