@@ -53,10 +53,11 @@ function createAwesomeReact(name) {
   const root = path.resolve(name);
   const appName = path.basename(root);
   const PACKAGE_NAME = 'awesome-react';
+  const useYarn = shouldUseYarn();
 
   fs.ensureDirSync(name);
+  execSync(useYarn ? 'yarn'  : 'npm install');
   process.chdir(root);
-  const useYarn = shouldUseYarn();
 
   const installCommand = generateInstallCommand(PACKAGE_NAME, useYarn);
   
