@@ -14,6 +14,8 @@ yarn global add create-awesome-react
 
 ```bash
 create-awesome-react <project_name>
+
+# Example create-awesome-react react-app
 ```
 
 ## License
