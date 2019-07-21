@@ -37,12 +37,11 @@ const program = new commander
   .parse(process.argv);
 
 if (!projectName) {
-  console.error('Please specify the project directory:');
+  console.error(chalk.red('Please specify the project directory:'));
   console.log();
-  console.warn(`${chalk.green('create-awesome-react')} <project-directory>`);
-  console.warn();
+  console.warn(`${chalk.green('create-awesome-react')} <project-directory>\n`);
   console.log(
-    `Run ${chalk.cyan(`${program.name()} -h`)} to see all options.`
+    `Run ${chalk.cyan(`${program.name()} -h`)} to see all options.\n`
   );
   process.exit(1);
 }
@@ -54,6 +53,7 @@ function createAwesomeReact(name) {
   const appName = path.basename(root);
   const PACKAGE_NAME = 'awesome-react';
   const useYarn = shouldUseYarn();
+  console.log(`use ${useYarn ? chalk.green('yarn'): chalk.green('npm')}`);
 
   fs.ensureDirSync(name);
   execSync(useYarn ? 'yarn'  : 'npm install');
@@ -64,34 +64,29 @@ function createAwesomeReact(name) {
   console.log();
   console.warn(`Creating project structure in ${chalk.blue(root)}`);
   console.warn('Please wait a minute...');
-  console.log();
+  console.log('Installing awesome-react...');
   execSync(installCommand);
-  console.log();
-  console.warn(chalk.green('Installed.'));
+  console.warn(chalk.green('awesome-react Installed.\n'));
 
-  console.log();
   console.warn(chalk.yellow('Now dealing data ... wait a minute'));
   fs.copySync(`${root}/node_modules/${PACKAGE_NAME}`, root);
   fs.removeSync(`${root}/node_modules`);
 
   // install packages
+  console.log(chalk.blue('Installing packages...'));
   const verbose = program.verbose ? '--verbose' : '';
   execSync(useYarn ? `yarn ${verbose}` : `npm install ${verbose}`);
 
-  console.log();
-  console.warn(chalk.green(`creat ${appName} success.`));
+  console.log('Packages installed.');
+  console.warn(chalk.green(`creat ${appName} success.`), '\n');
 
   afterInstalled(appName);
 }
 
 function afterInstalled(appName) {
-  console.log();
   console.warn('We suggest that you begin by typing:');
-  console.log();
-
   console.warn(chalk.green('cd'), appName);
-  console.warn(chalk.green('yarn start or npm start'));
-  console.log();
+  console.warn(chalk.green('yarn start or npm start'), '\n');
 }
 
 function shouldUseYarn() {
