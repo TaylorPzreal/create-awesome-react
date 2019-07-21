@@ -1,7 +1,7 @@
 {
   "name": "create-awesome-react",
   "description": "CLI tool for [awesome-react](https://github.com/TaylorPzreal/awesome-react)",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "bin": {
     "create-awesome-react": "bin/create-awesome-react.js"
   },
