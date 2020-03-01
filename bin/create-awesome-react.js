@@ -7,7 +7,6 @@ const chalk = require('chalk');
 const { execSync } = require('child_process');
 const packageJSON = require('../package.json');
 
-process.title = 'create-awesome-react';
 let projectName;
 
 const program = new commander
@@ -20,7 +19,6 @@ const program = new commander
   })
   .option('-v, --verbose', 'print additional logs')
   .option('-m, --package-manager [pkg]', 'select package manager (yarn|npm) to use')
-  .allowUnknownOption()
   .on('--help', () => {
     console.log(`    Only ${chalk.green('<project-directory>')} is required.`);
     console.log();
