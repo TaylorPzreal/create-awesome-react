@@ -22,4 +22,4 @@ create-awesome-react <project_name>
 
 ## License
 
-MIT License Copyright (c) 2017 TaylorPzreal
+MIT License Copyright (c) 2017-2020 TaylorPzreal
